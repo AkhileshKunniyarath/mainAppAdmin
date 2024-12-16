@@ -47,7 +47,7 @@ const UserList = () => {
         keyExtractor={(item) => item.id}
         renderItem={({ item }) => (
           <View style={styles.userContainer}>
-            <Text>{item.email}</Text>
+            <Text style={styles.email}>{item.email}</Text>
             <TouchableOpacity
               style={[styles.button, { backgroundColor: item.active ? 'red' : 'green' }]}
               onPress={() => toggleUserStatus(item.id, item.active)}
@@ -70,17 +70,22 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
   title: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: 'bold',
     marginBottom: 20,
   },
   userContainer: {
+    borderWidth: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: 10,
-    borderBottomWidth: 1,
+    padding: 15,
+    // borderBottomWidth: 1,
     borderColor: '#ccc',
+    marginBottom: 10,
+  },
+  email : {
+    fontSize: 18,
   },
   button: {
     padding: 10,
@@ -88,7 +93,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#fff',
-    fontSize: 16,
+    fontSize: 18,
   },
 });
 
